@@ -1,0 +1,64 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    padding: 10px 30px;
+    background: #343f56;
+    height: 50px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+}
+
+.sidenav {
+    width: 200px;
+    background: #343f56;
+    position: absolute;
+    height: 100%;
+    padding: 45px 0;
+    left: -100%;
+    transition: all 1s;
+}
+
+.sidenav.active {
+    left: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 7px 0;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+ul li a:hover,
+ul li a.active {
+    background: rgb(75, 74, 74);
+    color: #fff;
+}
+
+header svg {
+    font-size: 25px;
+}

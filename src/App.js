@@ -1,20 +1,35 @@
-import { Button } from "reactstrap";
+import Navbar from "./components/Navbar";
+import "./App.css";
+import { GiHamburgerMenu } from "react-icons/gi";
+import React, { Component } from "react";
 
-function App() {
-    return (
-        <div className="App">
-            <h1>OneNote Clone</h1>
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            active: false,
+        };
+        this.showSidebar = this.showSidebar.bind(this);
+    }
+
+    showSidebar(a) {
+        this.setState({
+            active: !a,
+        });
+    }
+
+    render() {
+        return (
             <div>
-                <Button color="primary">primary</Button>{" "}
-                <Button color="secondary">secondary</Button>{" "}
-                <Button color="success">success</Button>{" "}
-                <Button color="info">info</Button>{" "}
-                <Button color="warning">warning</Button>{" "}
-                <Button color="danger">danger</Button>{" "}
-                <Button color="link">link</Button>
+                <header className="sticky">
+                    <GiHamburgerMenu
+                        onClick={() => this.showSidebar(this.state.active)}
+                    />
+                </header>
+                {this.state.active && <Navbar />}
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default App;
